@@ -7,4 +7,4 @@ A new Flutter project.
   - Dart version 2.12.1
 
 ## Preview
-![App UI](/design/social ui light.png)
+![App UI](/design/social%20ui%20light.png)
