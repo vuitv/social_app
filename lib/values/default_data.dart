@@ -36,6 +36,8 @@ final _address = const [
 final listPost = List.generate(
     5,
     (index) => Post(
+          avatarUrl: 'assets/avatar/avatar${index%3}.png',
+          imageUrl: 'assets/post/post_image.png',
           userName: _userName[_random.nextInt(_userName.length)],
           timeStamp: '${_random.nextInt(12)}h ago',
           liked: _random.nextBool(),

@@ -14,6 +14,7 @@ class BrowseScreen extends StatelessWidget {
           title: Text('Browse'),
           actions: [
             CircleAvatarCustom(
+              backgroundImage: AssetImage('assets/avatar/own_avatar.png'),
               child: GestureDetector(
                 onTap: () => Get.toNamed(ProfileScreen.routeName),
               ),

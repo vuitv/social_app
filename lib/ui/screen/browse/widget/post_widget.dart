@@ -26,7 +26,7 @@ class PostItem extends StatelessWidget {
                     onTap: () => Get.toNamed(UserProfileScreen.routeName),
                     borderRadius: BorderRadius.circular(24),
                     child: CircleAvatar(
-                      backgroundImage: c.post?.avatarUrl != null ? NetworkImage(c.post!.avatarUrl!) : null,
+                      backgroundImage: c.post?.avatarUrl != null ? AssetImage(c.post!.avatarUrl!) : null,
                       radius: 24,
                     ),
                   ),
@@ -50,13 +50,20 @@ class PostItem extends StatelessWidget {
               //
               //if (c.post?.imageUrl != null)
               AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: Container(
-                      decoration: BoxDecoration(
+                aspectRatio: 16 / 9,
+                child: Container(
+                  decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(6.0),
-                    image: c.post!.imageUrl != null ? DecorationImage(image: NetworkImage(c.post!.imageUrl!)) : null,
-                  ))),
+                    image: c.post!.imageUrl != null
+                        ? DecorationImage(
+                            image: AssetImage(c.post!.imageUrl!),
+                            fit: BoxFit.cover,
+                          )
+                        : null,
+                  ),
+                ),
+              ),
               const SizedBox(height: 10),
 
               Padding(

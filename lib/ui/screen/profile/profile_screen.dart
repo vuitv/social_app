@@ -38,7 +38,10 @@ class ProfileScreen extends StatelessWidget {
               child: Column(children: [
                 SizedBox(height: MediaQuery.of(context).padding.top + kToolbarHeight + 14),
                 Stack(clipBehavior: Clip.none, alignment: Alignment.center, children: [
-                  CircleAvatarCustom.withBorder(minRadius: 60),
+                  CircleAvatarCustom.withBorder(
+                    minRadius: 60,
+                    backgroundImage: AssetImage('assets/avatar/own_avatar.png'),
+                  ),
                   Positioned(
                     right: 0,
                     child: CustomButton(
@@ -82,8 +85,15 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisCount: 3,
                   ),
                   itemCount: 20,
-                  itemBuilder: (_, __) => Container(
-                    color: Theme.of(context).primaryColorDark,
+                  itemBuilder: (_, index) => Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColorDark,
+                      borderRadius: BorderRadius.circular(6.0),
+                      image: DecorationImage(
+                        image: AssetImage('assets/avatar/img${index % 3}.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),

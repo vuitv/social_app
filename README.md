@@ -1,10 +1,33 @@
-# social_app
+# social_app 🧑‍💻
 
-A new Flutter project.
+![flutter_version][flutter_badge]
 
-## Getting Started SDK
-  - [Flutter version 2.0.2](https://flutter.dev/docs/development/tools/sdk/releases)
-  - Dart version 2.12.1
+A system making by VuiTv 🤖
+
+---
+
+## Getting Started 🚀
+
+### Install Flutter SDK
+```sh
+git clone https://github.com/flutter/flutter.git --depth 1 -b 3.22.2 $HOME/flutter
+export PATH="$PATH:$HOME/flutter/bin"
+flutter doctor -v
+```
+
+### Run project
+
+- Get dependencies
+```sh
+flutter pub get
+```
+
+- Run
+```sh
+flutter run
+```
 
 ## Preview
 ![App UI](/design/social%20ui%20light.png)
+
+[flutter_badge]: https://img.shields.io/badge/flutter-v3.22.2-blue
