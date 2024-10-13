@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Badge extends StatelessWidget {
+class BadgeCount extends StatelessWidget {
   final int badgeNumber;
   final double? radius;
   final double? minWidth;
 
-  const Badge(
+  const BadgeCount(
     this.badgeNumber, {
     Key? key,
     this.radius = 24,

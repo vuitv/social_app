@@ -1,6 +1,4 @@
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +11,7 @@ import 'profile/profile_screen.dart';
 
 class HomeBottomBar extends StatelessWidget {
   static const routeName = '/home';
-  static final route = GetPage(name: routeName, page: () => HomeBottomBar());
+  static final route = GetPage(name: routeName, page: HomeBottomBar.new);
 
   final c = Get.put(HomeController());
 
@@ -22,7 +20,7 @@ class HomeBottomBar extends StatelessWidget {
     List<Widget> tabs = <Widget>[
       CustomTab(icon: Assets.home),
       CustomTab(icon: Assets.feed),
-      CustomTab(icon: Badge(20, minWidth: 45)),
+      CustomTab(icon: BadgeCount(20, minWidth: 45)),
     ];
 
     List<Widget> bodyView = <Widget>[
@@ -159,14 +157,14 @@ class _TabStyle extends AnimatedWidget {
     final animation = kAlwaysDismissedAnimation;
 
     final defaultStyle =
-        (tabBarTheme.selectedLabelStyle ?? themeData.primaryTextTheme.bodyText1)!.copyWith(inherit: true);
+        (tabBarTheme.selectedLabelStyle ?? themeData.primaryTextTheme.bodyLarge)!.copyWith(inherit: true);
     final defaultUnselectedStyle =
-        (tabBarTheme.unselectedLabelStyle ?? themeData.primaryTextTheme.bodyText1)!.copyWith(inherit: true);
+        (tabBarTheme.unselectedLabelStyle ?? themeData.primaryTextTheme.bodyLarge)!.copyWith(inherit: true);
     final textStyle = (selected
         ? TextStyle.lerp(defaultStyle, defaultUnselectedStyle, animation.value)
         : TextStyle.lerp(defaultUnselectedStyle, defaultStyle, animation.value))!;
 
-    final selectedColor = (tabBarTheme.selectedItemColor ?? themeData.primaryTextTheme.bodyText1!.color)!;
+    final selectedColor = (tabBarTheme.selectedItemColor ?? themeData.primaryTextTheme.bodyLarge!.color)!;
     final unselectedColor = tabBarTheme.unselectedItemColor ?? selectedColor.withAlpha(0xB2); // 70% alpha
 
     final color = (selected

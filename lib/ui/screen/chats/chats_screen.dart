@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:social_app/models/user_chat_model.dart';
-import 'package:social_app/values/default_data.dart';
 
+import '../../../models/user_chat_model.dart';
+import '../../../values/default_data.dart';
 import '../../widgets/badge.dart';
 import '../../widgets/button.dart';
 import '../../widgets/circle_avatar.dart';
@@ -12,7 +12,7 @@ import 'widget/online_status.dart';
 
 class ChatsScreen extends StatelessWidget {
   static const routeName = '/chats';
-  static final route = GetPage(name: routeName, page: () => ChatsScreen());
+  static final route = GetPage(name: routeName, page: ChatsScreen.new);
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -88,13 +88,13 @@ class ChatsItem extends StatelessWidget {
               ),
           ]),
           title: Text(item.name ?? '',
-              maxLines: 1, style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold)),
+              maxLines: 1, style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold)),
           subtitle: Text(item.lastMessage ?? ''),
           trailing: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Text(item.time ?? '',
-                style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 12, fontWeight: FontWeight.w300)),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12, fontWeight: FontWeight.w300)),
             const SizedBox(height: 8),
-            Badge(item.unread, radius: 20)
+            BadgeCount(item.unread, radius: 20)
           ]),
         ),
       ));

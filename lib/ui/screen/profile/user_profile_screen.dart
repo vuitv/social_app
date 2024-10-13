@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +8,7 @@ import 'widget/social_outcomes.dart';
 
 class UserProfileScreen extends StatelessWidget {
   static const routeName = '/userProfile';
-  static final route = GetPage(name: routeName, page: () => UserProfileScreen());
+  static final route = GetPage(name: routeName, page: UserProfileScreen.new);
 
   final c = Get.put(ProfileController());
 
@@ -37,12 +36,12 @@ class UserProfileScreen extends StatelessWidget {
                 Expanded(
                   flex: 3,
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('Amanda Roberts', maxLines: 1, style: Theme.of(context).textTheme.headline6),
+                    Text('Amanda Roberts', maxLines: 1, style: Theme.of(context).textTheme.titleLarge),
                     const SizedBox(height: 4),
                     Text('San Francisco, CA',
-                        style: Theme.of(context).textTheme.caption?.copyWith(fontWeight: FontWeight.w300)),
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w300)),
                     const SizedBox(height: 4),
-                    Text('78 posts 213 followe', style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 12)),
+                    Text('78 posts 213 follower', style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12)),
                     const SizedBox(height: 10),
                     CustomButton.withoutBox(
                       onPressed: () => null,

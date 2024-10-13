@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../widgets/button.dart';
 import '../../widgets/card_form.dart';
@@ -10,7 +9,7 @@ import 'widget/input_field.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
-  static final route = GetPage(name: routeName, page: () => LoginScreen());
+  static final route = GetPage(name: routeName, page: LoginScreen.new);
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -64,7 +63,7 @@ class LoginScreen extends StatelessWidget {
           bottomNavigationBar: Column(mainAxisSize: MainAxisSize.min, children: [
             Text(
               'Dont\' have an account yet?',
-              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontSize: 13,
                     fontWeight: FontWeight.w300,
                   ),
@@ -73,7 +72,7 @@ class LoginScreen extends StatelessWidget {
               child: Text('SIGN UP NOW'),
               onPressed: () => Get.toNamed(RegisterScreen.routeName),
               style: TextButton.styleFrom(
-                primary: Theme.of(context).textTheme.bodyText1?.color,
+                backgroundColor: Theme.of(context).textTheme.bodyLarge?.color,
                 minimumSize: Size(88, 26),
                 padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,

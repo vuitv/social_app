@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../../values/assets.dart';
 import '../../../values/colors.dart';
@@ -23,11 +22,11 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Image(image: Assets.appIcon, fit: BoxFit.contain, width: Sizes.logo),
                 const SizedBox(height: 16),
-                Text('Social', style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: 40)),
+                Text('Social', style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 40)),
                 const SizedBox(height: 12),
                 Text(
                   'Cool tagline goes here',
-                  style: Theme.of(context).textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w300),
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w300),
                 ),
               ]),
             ),
@@ -47,6 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     CustomButton.icon(
                       width: MediaQuery.of(context).size.width * 0.78,
+                      color: AppColors.ceruleanBlueColor,
                       icon: Icon(Icons.mail_outline),
                       label: Text('SIGN UP USING EMAIL'),
                       onPressed: () => Get.toNamed(RegisterScreen.routeName),
@@ -57,7 +57,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text(
                       'I already have an account.',
-                      style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             fontSize: 13,
                             fontWeight: FontWeight.w300,
                           ),
@@ -66,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                       child: Text('LOGIN NOW'),
                       onPressed: () => Get.toNamed(LoginScreen.routeName),
                       style: TextButton.styleFrom(
-                        primary: Theme.of(context).textTheme.bodyText1?.color,
+                        foregroundColor: Theme.of(context).textTheme.bodyLarge?.color,
                         minimumSize: Size(88, 26),
                         padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,

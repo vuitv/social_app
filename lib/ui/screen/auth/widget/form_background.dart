@@ -13,11 +13,11 @@ class FormBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(mainAxisSize: MainAxisSize.min, children: [
         const SizedBox(height: 32),
-        Text(title ?? '', style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: 30)),
+        Text(title ?? '', style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 30)),
         const SizedBox(height: 8),
         Text(
           'Please enter your credentials in the form bellow:',
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
               ),

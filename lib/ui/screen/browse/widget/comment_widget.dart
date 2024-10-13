@@ -16,7 +16,7 @@ class CommentItem extends StatelessWidget {
           Flexible(
             child: Text(
               item.userName ?? '',
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(width: 3),

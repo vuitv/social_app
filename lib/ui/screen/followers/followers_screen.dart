@@ -8,7 +8,7 @@ import '../profile/user_profile_screen.dart';
 
 class FollowersScreen extends StatelessWidget {
   static const routeName = '/followers';
-  static final route = GetPage(name: routeName, page: () => FollowersScreen());
+  static final route = GetPage(name: routeName, page: FollowersScreen.new);
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -16,7 +16,7 @@ class FollowersScreen extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             leading: CustomBackButton(),
-            title: Text('Your followers', style: Theme.of(context).textTheme.headline1),
+            title: Text('Your followers', style: Theme.of(context).textTheme.displayLarge),
             actions: [CircleAvatarCustom()],
             centerTitle: true,
             toolbarHeight: kToolbarHeight + 16,
@@ -63,15 +63,15 @@ class FollowerItem extends StatelessWidget {
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Expanded(
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('Amanda Roberts', maxLines: 1, style: Theme.of(context).textTheme.headline6),
+                      Text('Amanda Roberts', maxLines: 1, style: Theme.of(context).textTheme.titleLarge),
                       const SizedBox(height: 4),
                       Text(
                         'San Francisco, CA',
-                        style: Theme.of(context).textTheme.caption?.copyWith(fontWeight: FontWeight.w300),
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w300),
                       ),
                       const SizedBox(height: 4),
                       Text('78 posts 213 followe',
-                          style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 12)),
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12)),
                       const SizedBox(height: 10),
                     ]),
                   ),

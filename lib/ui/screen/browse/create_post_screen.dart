@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +9,7 @@ import '../auth/widget/input_field.dart';
 
 class CreatePostScreen extends StatelessWidget {
   static const routeName = '/createPost';
-  static final route = GetPage(name: routeName, page: () => CreatePostScreen());
+  static final route = GetPage(name: routeName, page: CreatePostScreen.new);
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -25,7 +24,7 @@ class CreatePostScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                Text('Create post', style: Theme.of(context).textTheme.headline1),
+                Text('Create post', style: Theme.of(context).textTheme.displayLarge),
                 const SizedBox(height: 30),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -76,7 +75,7 @@ class CreatePostScreen extends StatelessWidget {
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text(
                         'Add Photo / Video',
-                        style: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300),
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300),
                       ),
                       Center(
                           child: const Icon(
@@ -91,7 +90,7 @@ class CreatePostScreen extends StatelessWidget {
                 CardForm(paddingHorizontal: 0, children: [
                   InputField(
                     label: 'Tag Friends',
-                    labelStyle: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300),
+                    labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300),
                     child: TextFormField(
                       decoration: InputDecoration(
                         hintText: 'Enter your friends name',
@@ -107,7 +106,7 @@ class CreatePostScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   InputField(
                     label: 'Check in',
-                    labelStyle: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300),
+                    labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300),
                     child: TextFormField(
                       decoration: InputDecoration(
                         hintText: 'Enter your location',

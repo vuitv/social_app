@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +11,7 @@ import 'widget/online_status.dart';
 
 class ChatRoomScreen extends StatelessWidget {
   static const routeName = '/chatting';
-  static final route = GetPage(name: routeName, page: () => ChatRoomScreen());
+  static final route = GetPage(name: routeName, page: ChatRoomScreen.new);
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -44,7 +43,7 @@ class ChatRoomScreen extends StatelessWidget {
                   title: Text(
                     'Amanda Roberts',
                     maxLines: 1,
-                    style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text('Active now'),
                 ),

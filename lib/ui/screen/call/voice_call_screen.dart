@@ -9,7 +9,7 @@ import 'widget/icon_border.dart';
 
 class VoiceCallScreen extends StatelessWidget {
   static const routeName = '/voiceCall';
-  static final route = GetPage(name: routeName, page: () => VoiceCallScreen());
+  static final route = GetPage(name: routeName, page: VoiceCallScreen.new);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -35,11 +35,11 @@ class VoiceCallScreen extends StatelessWidget {
                 const SizedBox(height: 30),
                 Text(
                   'Rona Jameson',
-                  style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: 22),
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 22),
                 ),
                 Text(
                   'rona.jameson@gmail.com',
-                  style: Theme.of(context).textTheme.caption?.copyWith(fontWeight: FontWeight.w300),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w300),
                 ),
                 const SizedBox(height: 20),
                 Text('2:53'),

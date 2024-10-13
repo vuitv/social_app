@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +11,7 @@ import 'widget/social_outcomes.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const routeName = '/profile';
-  static final route = GetPage(name: routeName, page: () => ProfileScreen());
+  static final route = GetPage(name: routeName, page: ProfileScreen.new);
 
   final c = Get.put(ProfileController());
 
@@ -48,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () => null,
                       label: Text(
                         'EDIT PROFILE',
-                        style: TextStyle(color: Theme.of(context).textTheme.bodyText2?.color),
+                        style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
                       ),
                       height: 45,
                       color: Theme.of(context).cardColor,
@@ -60,11 +57,11 @@ class ProfileScreen extends StatelessWidget {
                 Text(
                   'Lisa Springston',
                   maxLines: 1,
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 Text(
                   'San Francisco, CA',
-                  style: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300),
                 ),
                 const SizedBox(height: 30),
                 SocialOutcomes(

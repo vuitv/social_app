@@ -34,7 +34,7 @@ class SocialOutcomes extends StatelessWidget {
               ),
             ]),
         child: DefaultTextStyle(
-          style: Theme.of(context).textTheme.headline1!,
+          style: Theme.of(context).textTheme.displayLarge!,
           child: Row(children: [
             Expanded(
               child: InkWell(
@@ -42,7 +42,7 @@ class SocialOutcomes extends StatelessWidget {
                 child: Column(children: [
                   posts,
                   const SizedBox(height: 8),
-                  Text('Posts', style: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300)),
+                  Text('Posts', style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300)),
                 ]),
               ),
             ),
@@ -53,7 +53,7 @@ class SocialOutcomes extends StatelessWidget {
                   followers,
                   const SizedBox(height: 8),
                   Text('Followers',
-                      style: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300)),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300)),
                 ]),
               ),
             ),
@@ -64,7 +64,7 @@ class SocialOutcomes extends StatelessWidget {
                   following,
                   const SizedBox(height: 8),
                   Text('Following',
-                      style: Theme.of(context).textTheme.subtitle2?.copyWith(fontWeight: FontWeight.w300)),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w300)),
                 ]),
               ),
             ),

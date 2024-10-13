@@ -94,17 +94,17 @@ class Themes {
 
   //text theme for light theme
   static final TextTheme _lightTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 20.0, color: _lightTextColor, fontWeight: FontWeight.bold),
-    headline6: TextStyle(fontSize: 16.0, color: _lightTextColor, fontWeight: FontWeight.bold),
-    bodyText1: TextStyle(fontSize: 15.0, color: _lightTextColor),
+    displayLarge: TextStyle(fontSize: 20.0, color: _lightTextColor, fontWeight: FontWeight.bold),
+    titleLarge: TextStyle(fontSize: 16.0, color: _lightTextColor, fontWeight: FontWeight.bold),
+    bodyLarge: TextStyle(fontSize: 15.0, color: _lightTextColor),
 
     // Default
-    bodyText2: TextStyle(fontSize: 14.0, color: _lightTextColor),
+    bodyMedium: TextStyle(fontSize: 14.0, color: _lightTextColor),
 
-    subtitle1: TextStyle(fontSize: 16.0, color: _lightTextSecondaryColor),
-    subtitle2: TextStyle(fontSize: 14.0, color: _lightTextSecondaryColor),
-    caption: TextStyle(fontSize: 12.0, color: _lightTextCaptionColor),
-    button: TextStyle(fontSize: 15.0, color: _lightTextColor, fontWeight: FontWeight.w600),
+    titleMedium: TextStyle(fontSize: 16.0, color: _lightTextSecondaryColor),
+    titleSmall: TextStyle(fontSize: 14.0, color: _lightTextSecondaryColor),
+    bodySmall: TextStyle(fontSize: 12.0, color: _lightTextCaptionColor),
+    labelLarge: TextStyle(fontSize: 15.0, color: _lightTextColor, fontWeight: FontWeight.w600),
   );
 
   //the light theme
@@ -121,8 +121,7 @@ class Themes {
     appBarTheme: AppBarTheme(
       color: _lightBackgroundAppBarColor,
       iconTheme: IconThemeData(color: _lightTextColor),
-      textTheme: _lightTextTheme.copyWith(headline6: _lightTextTheme.headline6!.copyWith(fontSize: 34)),
-      titleTextStyle: _lightTextTheme.headline6!.copyWith(fontSize: 34),
+      titleTextStyle: _lightTextTheme.titleLarge!.copyWith(fontSize: 34),
       centerTitle: false,
       elevation: 0,
     ),
@@ -133,7 +132,7 @@ class Themes {
     ),
     colorScheme: ColorScheme.light(
       primary: _lightPrimaryColor,
-      primaryVariant: _lightBackgroundColor,
+      onPrimary: _lightBackgroundColor,
       // secondary: _lightSecondaryColor,
     ),
     bannerTheme: MaterialBannerThemeData(
@@ -157,20 +156,21 @@ class Themes {
       textTheme: ButtonTextTheme.primary,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      minimumSize: Size(100, 56),
-      elevation: 4,
-      onPrimary: Colors.white,
-      shadowColor: Color.fromARGB(25, 86, 128, 250),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        minimumSize: Size(100, 56),
+        elevation: 4,
+        shadowColor: Color.fromARGB(25, 86, 128, 250),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
       ),
-    )),
+    ),
     unselectedWidgetColor: _lightPrimaryColor,
     dividerTheme: DividerThemeData(),
     inputDecorationTheme: InputDecorationTheme(
       //prefixStyle: TextStyle(color: _lightIconColor),
-      hintStyle: _lightTextTheme.caption?.copyWith(
+      hintStyle: _lightTextTheme.bodySmall?.copyWith(
         fontSize: 20,
       ),
       border: UnderlineInputBorder(
@@ -208,17 +208,17 @@ class Themes {
       fontWeight: FontWeight.w100);*/
 
   static final TextTheme _darkTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 20.0, color: _darkTextColor, fontWeight: FontWeight.bold),
-    headline6: TextStyle(fontSize: 16.0, color: _darkTextColor, fontWeight: FontWeight.bold),
-    bodyText1: TextStyle(fontSize: 15.0, color: _darkTextColor),
+    displayLarge: TextStyle(fontSize: 20.0, color: _darkTextColor, fontWeight: FontWeight.bold),
+    titleLarge: TextStyle(fontSize: 16.0, color: _darkTextColor, fontWeight: FontWeight.bold),
+    bodyLarge: TextStyle(fontSize: 15.0, color: _darkTextColor),
 
     // Default
-    bodyText2: TextStyle(fontSize: 14.0, color: _darkTextColor),
+    bodyMedium: TextStyle(fontSize: 14.0, color: _darkTextColor),
 
-    subtitle1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    subtitle2: TextStyle(fontSize: 14.0, color: _darkTextColor),
-    caption: TextStyle(fontSize: 12.0, color: _darkTextCaptionColor),
-    button: TextStyle(fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
+    titleMedium: TextStyle(fontSize: 16.0, color: _darkTextColor),
+    titleSmall: TextStyle(fontSize: 14.0, color: _darkTextColor),
+    bodySmall: TextStyle(fontSize: 12.0, color: _darkTextCaptionColor),
+    labelLarge: TextStyle(fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
   );
 
   //the dark theme
@@ -228,7 +228,7 @@ class Themes {
     primaryColorDark: grayishBlue,
     brightness: Brightness.dark,
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
-    accentColor: _darkPrimaryColor,
+    hintColor: _darkPrimaryColor,
     //prefix icon color form input on focus
 
     //fontFamily: font1,
@@ -239,8 +239,7 @@ class Themes {
     appBarTheme: AppBarTheme(
       color: _darkBackgroundAppBarColor,
       iconTheme: IconThemeData(color: _darkTextColor),
-      textTheme: _darkTextTheme.copyWith(headline6: _darkTextTheme.headline6!.copyWith(fontSize: 34)),
-      titleTextStyle: _darkTextTheme.headline6!.copyWith(fontSize: 34),
+      titleTextStyle: _darkTextTheme.titleMedium!.copyWith(fontSize: 34),
       centerTitle: false,
       elevation: 0,
     ),
@@ -251,7 +250,7 @@ class Themes {
     ),
     colorScheme: ColorScheme.dark(
       primary: _darkPrimaryColor,
-      primaryVariant: _darkBackgroundColor,
+      onPrimary: _darkBackgroundColor,
 
       // secondary: _darkSecondaryColor,
     ),
@@ -276,20 +275,21 @@ class Themes {
       textTheme: ButtonTextTheme.primary,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      minimumSize: Size(100, 56),
-      elevation: 4,
-      onPrimary: Colors.white,
-      shadowColor: Color.fromARGB(25, 86, 128, 250),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        minimumSize: Size(100, 56),
+        elevation: 4,
+        shadowColor: Color.fromARGB(25, 86, 128, 250),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
       ),
-    )),
+    ),
     unselectedWidgetColor: _darkPrimaryColor,
     inputDecorationTheme: InputDecorationTheme(
       prefixStyle: TextStyle(color: _darkIconColor),
       //labelStyle: TextStyle(color: nevada),
-      hintStyle: _darkTextTheme.caption?.copyWith(
+      hintStyle: _darkTextTheme.bodySmall?.copyWith(
         fontSize: 20,
       ),
       border: UnderlineInputBorder(

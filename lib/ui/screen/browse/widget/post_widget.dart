@@ -35,14 +35,14 @@ class PostItem extends StatelessWidget {
                     child: Text(
                   '${c.post?.userName ?? ''} ',
                   maxLines: 2,
-                  style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
                 )),
                 Text(
                   ' · ${c.post?.timeStamp ?? '_'}',
                   style: Theme.of(context)
                       .textTheme
-                      .caption
-                      ?.copyWith(fontSize: Theme.of(context).textTheme.bodyText2?.fontSize),
+                      .bodySmall
+                      ?.copyWith(fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize),
                 ),
               ]),
               const SizedBox(height: 10),
@@ -122,13 +122,13 @@ class PostControl extends StatelessWidget {
           const SizedBox(width: 4),
           Text(
             title,
-            style: Theme.of(context).textTheme.bodyText2?.copyWith(fontWeight: FontWeight.bold, fontSize: 12),
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 12),
           ),
           const SizedBox(width: 4),
           if (number > 0)
             Text(
               '${number < 1000 ? number : '999+'}',
-              style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 12),
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 12),
             ),
         ]),
       );
